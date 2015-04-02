@@ -1,10 +1,10 @@
-::Íóæåí sqlite3.exe äëÿ ñîçäàíèÿ backup
+::ÐÑƒÐ¶ÐµÐ½ sqlite3.exe Ð´Ð»Ñ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ backup
 @echo off
 set path_prog=..\Filyama\Filyama
 echo Copy database
 copy %path_prog%\main.db .\
 echo Create backup
-if exist {sqlite3.exe} (
+if exist sqlite3.exe (
     sqlite3.exe main.db .schema > backup.sql
 ) else (
     echo Not find sqlite3.exe
