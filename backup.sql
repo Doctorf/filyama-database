@@ -1,4 +1,3 @@
-CREATE TABLE category_films(id_films INTEGER, id_category INTEGER,FOREIGN KEY(id_films) REFERENCES films(id), FOREIGN KEY(id_category) REFERENCES category(id));
 CREATE TABLE [category] (
   [id] INTEGER PRIMARY KEY AUTOINCREMENT, 
   [name] TEXT, 
@@ -31,3 +30,7 @@ CREATE TABLE [films] (
   [date_world] TIMESTAMP, 
   [date_rus] TIMESTAMP, 
   [path] VARCHAR(512));
+CREATE TABLE [category_films] (
+  [id_films] INTEGER REFERENCES [films]([id]), 
+  [id_category] INTEGER REFERENCES [category]([id]), 
+  CONSTRAINT [] PRIMARY KEY ([id_films], [id_category]));
