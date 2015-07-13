@@ -34,3 +34,7 @@ CREATE TABLE [category_films] (
   [id_films] INTEGER REFERENCES [films]([id]), 
   [id_category] INTEGER REFERENCES [category]([id]), 
   CONSTRAINT [] PRIMARY KEY ([id_films], [id_category]));
+CREATE TABLE [configs] (
+  [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+  [name] VARCHAR(255), 
+  [value] VARCHAR(255));
