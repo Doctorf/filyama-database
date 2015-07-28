@@ -38,3 +38,13 @@ CREATE TABLE [configs] (
   [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
   [name] VARCHAR(255), 
   [value] VARCHAR(255));
+CREATE TABLE [serials] (
+  [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+  [name] VARCHAR(255));
+CREATE TABLE [seasons] (
+  [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+  [number] INTEGER, 
+  [name] VARCHAR(255));
+CREATE TABLE [season_serial] (
+  [id_season] INTEGER REFERENCES [seasons]([id]), 
+  [id_serial] CHAR REFERENCES [serials]([id]));
