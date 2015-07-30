@@ -48,3 +48,10 @@ CREATE TABLE [seasons] (
 CREATE TABLE [season_serial] (
   [id_season] INTEGER REFERENCES [seasons]([id]), 
   [id_serial] CHAR REFERENCES [serials]([id]));
+CREATE TABLE [episodes] (
+  [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+  [number] INTEGER, 
+  [name] VARCHAR(255));
+CREATE TABLE [episode_season] (
+  [id_episode] INTEGER NOT NULL REFERENCES [episodes]([id]) ON DELETE CASCADE, 
+  [id_season] INTERGER NOT NULL REFERENCES [seasons]([id]) ON DELETE CASCADE);
