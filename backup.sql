@@ -55,3 +55,13 @@ CREATE TABLE [episodes] (
 CREATE TABLE [episode_season] (
   [id_episode] INTEGER NOT NULL REFERENCES [episodes]([id]) ON DELETE CASCADE, 
   [id_season] INTERGER NOT NULL REFERENCES [seasons]([id]) ON DELETE CASCADE);
+CREATE TABLE [cast] (
+  [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+  [id_people] INTEGER, 
+  [id_film] CHAR, 
+  [character] VARCHAR(255));
+CREATE TABLE "persons" (
+  [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+  [name] VARCHAR(255), 
+  [birthday] TIMESTAMP, 
+  [ImdbId] VARCHAR(255));
