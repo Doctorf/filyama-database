@@ -15,12 +15,6 @@ CREATE TABLE [file_extensions] (
 CREATE TABLE [binary_data_films] (
   [id_films] INTEGER NOT NULL REFERENCES [films]([id]), 
   [id_binary_data] INTEGER NOT NULL REFERENCES [binary_data]([id]));
-CREATE TABLE [binary_data] (
-  [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
-  [url] VARCHAR(255), 
-  [is_thumbnails] BOOLEAN DEFAULT false, 
-  [is_frame] BOOLEAN DEFAULT false, 
-  [is_cover] BOOLEAN DEFAULT false);
 CREATE TABLE [films] (
   [id] INTEGER PRIMARY KEY AUTOINCREMENT, 
   [name_orig] TEXT, 
@@ -65,3 +59,10 @@ CREATE TABLE "persons" (
   [name] VARCHAR(255), 
   [birthday] TIMESTAMP, 
   [ImdbId] VARCHAR(255));
+CREATE TABLE [binary_data] (
+  [id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+  [url] VARCHAR(512), 
+  [path] VARCHAR(512), 
+  [is_thumbnails] BOOLEAN DEFAULT false, 
+  [is_frame] BOOLEAN DEFAULT false, 
+  [is_cover] BOOLEAN DEFAULT false);
